@@ -40,7 +40,7 @@ export default function App() {
     setErrorState(prev => ({ ...prev, skillGap: null }));
 
     try {
-      const res = await fetch('/api/skill-gap', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/skill-gap`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -73,7 +73,7 @@ export default function App() {
     setErrorState(prev => ({ ...prev, interview: null }));
 
     try {
-      const res = await fetch('/api/interview/start', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/interview/start`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -102,7 +102,7 @@ export default function App() {
   // Step 3: Evaluate Answer API Call
   const handleEvaluateAnswer = async (payload) => {
     try {
-      const res = await fetch('/api/interview/answer', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/interview/answer`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
@@ -130,7 +130,7 @@ export default function App() {
     setErrorState(prev => ({ ...prev, roadmap: null }));
 
     try {
-      const res = await fetch('/api/roadmap', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/roadmap`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
